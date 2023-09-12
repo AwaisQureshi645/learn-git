@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+
+/* Add your global styles here */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-content {
+    background-color: white;
+    width: 60%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 12%;
+    padding: 20px;
+    /* border-radius: 8px; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.infusion-field input{
+    width: 70%;
+    margin-top: 0.5rem !important;
+    margin: auto;
+    border: 1px solid rgba(204,204,204,1);
+    color: #020020;
+    font-size: inherit;
+    height: 25px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    padding: 0.1rem 0.5rem;
+    font-size: 12px;
+    opacity: 0.7;
+}
+.infusion-field{
+    display: flex;
+   
+    justify-content: center;
+    flex-direction: column;
+}
+.popup-content p{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    /* margin-bottom: -0.1rem; */
+color: #48484a !important;
+    font-weight: 400;
+    /* line-height: 1.125; */
+   
+
+}
+.infusion-submit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infusion-recaptcha{
+    width: 70%;
+  border-radius: 1.5rem;
+    border: none;
+    height: auto;
+    border-color: rgb(46,84,232);
+    background: rgb(46,84,232);
+    color: rgba(255,255,255,1);
+    font-weight: bold;
+    min-height: 40px;
+    min-width: 96px;
+    padding: 14px 24px;
+}
+
+#openPopupButton{
+    border-color: rgb(46,84,232);
+    background: rgb(46,84,232);
+    color: rgba(255,255,255,1);
+    border: none;
+    width: 12rem;
+    font-size: 21px;
+    font-weight: 700;
+    height: 7vh;
+    min-height: 30px !important;
+    min-width: 100px;
+     padding: 5px 0px 5px 0px; 
+    font-family: "Roboto",sans-serif;
+    border-radius: 10000px;
+    transition: 1s;
+
+}
+#openPopupButton:hover{
+    background-color: #0a2cb2;
+    transition: 1s;
+}
+.contentBox{
+    display: flex;
+    justify-content: center;
+}  
+ .btnpopup{
+   width: 70%;
+  border-radius: 1.5rem !important;
+    border: none !important;
+    height: auto !important;
+    border-color: rgb(46,84,232) !important;
+    background: rgb(46,84,232) !important;
+    color: rgba(255,255,255,1) !important;
+    font-weight: bold!important;
+    min-height: 40px !important;
+    min-width: 96px !important;
+    padding: 14px 24px !important;
+}
+
+#btnpopup:hover{
+    background-color: #0a2cb2 !important;
+    transition: 1s !important;
+}
+
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="contentBox">
+        <button id="openPopupButton">Save My Seat!</button>
+    </div>
+    <div id="popupContainer" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopupButton">&times;</span>
+            <p>Enter your email to save your seat for the webinar.</p>
+            <form accept-charset="UTF-8" action="https://mow556.infusionsoft.com/app/form/process/bd40bfe3c6346a5eadeb4fac576ffb71" class="infusion-form" id="inf_form_bd40bfe3c6346a5eadeb4fac576ffb71" method="POST">
+                <input name="inf_form_xid" type="hidden" value="bd40bfe3c6346a5eadeb4fac576ffb71" />
+                <input name="inf_form_name" type="hidden" value="Best Practices for Creating High Performing Teams" />
+                <input name="infusionsoft_version" type="hidden" value="1.70.0.583941" />
+                <div class="infusion-field">
+                    <!-- <label for="inf_field_Email">Email *</label> -->
+                    <input id="inf_field_Email" name="inf_field_Email" placeholder="Email" type="text" />
+                </div>
+                <div class="infusion-field">
+                    <!-- <label for="inf_field_FirstName">First Name</label> -->
+                    <input id="inf_field_FirstName" name="inf_field_FirstName" placeholder="First Name" type="text" />
+                </div>
+                <div class="infusion-field">
+                    <!-- <label for="inf_field_LastName">Last Name</label> -->
+                    <input id="inf_field_LastName" name="inf_field_LastName" placeholder="Last Name" type="text" />
+                </div>
+                <div>
+                    <div>&nbsp;</div>
+                </div>
+                <div class="infusion-submit">
+                    <button class="infusion-recaptcha btnpopup" type="submit">Submit</button>
+                </div>
+            </form>
+            <script type="text/javascript" src="https://mow556.infusionsoft.app/app/webTracking/getTrackingCode"></script>
+            <script type="text/javascript" src="https://mow556.infusionsoft.com/app/timezone/timezoneInputJs?xid=bd40bfe3c6346a5eadeb4fac576ffb71"></script>
+            <script type="text/javascript" src="https://mow556.infusionsoft.com/js/jquery/jquery-3.3.1.js"></script>
+            <script type="text/javascript" src="https://mow556.infusionsoft.app/app/webform/overwriteRefererJs"></script>
+
+
+
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const openPopupButton = document.getElementById("openPopupButton");
+            const closePopupButton = document.getElementById("closePopupButton");
+            const popupContainer = document.getElementById("popupContainer");
+            const emailField = document.getElementById("inf_field_Email"); // Get the email input field
+            const submitButton = document.querySelector(".btnpopup"); // Get the submit button
+        
+            openPopupButton.addEventListener("click", function() {
+                popupContainer.style.display = "block";
+            });
+        
+            closePopupButton.addEventListener("click", function() {
+                popupContainer.style.display = "none";
+            });
+        
+            submitButton.addEventListener("click", function(event) {
+                if (emailField.value.trim() === "") {
+                    event.preventDefault(); // Prevent form submission
+                    alert("Please fill your E-mail Address."); // Display an alert message
+                }
+            });
+        });
+        </script>
+        
+</body>
+</html>
